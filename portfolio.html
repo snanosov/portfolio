@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Consulting & Optimization — Портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F4F6F9; font-family: 'IBM Plex Sans', sans-serif; color: #1a1a1a; }
+  .pf-root { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  .pf-hero { background: #0C1A2E; border-radius: 16px; padding: 3rem 2.5rem 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+  .pf-hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; border-radius: 50%; border: 1.5px solid rgba(55,138,221,0.25); }
+  .pf-hero::after { content: ''; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; border-radius: 50%; border: 1px solid rgba(55,138,221,0.18); }
+  .pf-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(55,138,221,0.18); color: #85B7EB; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem; }
+  .pf-hero-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #fff; }
+  .pf-hero-title span { color: #378ADD; }
+  .pf-hero-sub { font-size: 15px; font-weight: 300; color: #B5D4F4; line-height: 1.7; max-width: 480px; margin-bottom: 2rem; }
+  .pf-stats { display: flex; gap: 2rem; flex-wrap: wrap; border-top: 0.5px solid rgba(181,212,244,0.2); padding-top: 1.5rem; }
+  .pf-stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #fff; }
+  .pf-stat-lbl { font-size: 12px; color: #B5D4F4; margin-top: 2px; font-weight: 300; }
+
+  .pf-promise { background: #EEF3F9; border-left: 3px solid #378ADD; border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+  .pf-promise p { font-size: 15px; line-height: 1.7; color: #1a1a1a; }
+
+  .pf-section-label { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #888; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 0.5px solid #dde3ea; }
+
+  .pf-services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 2rem; }
+  @media(max-width: 580px) { .pf-services { grid-template-columns: repeat(2, 1fr); } }
+  .pf-svc { background: #fff; border: 0.5px solid #dde3ea; border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; gap: 6px; }
+  .pf-svc-icon { font-size: 20px; color: #378ADD; line-height: 1; }
+  .pf-svc-title { font-size: 14px; font-weight: 500; color: #1a1a1a; }
+  .pf-svc-desc { font-size: 12px; color: #666; line-height: 1.5; }
+
+  .pf-cases { display: flex; flex-direction: column; gap: 14px; margin-bottom: 2rem; }
+  .pf-case { background: #fff; border: 1.5px solid #378ADD; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+  .pf-case-badge { min-width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .pf-case-badge.blue  { background: #E6F1FB; color: #185FA5; }
+  .pf-case-badge.purple{ background: #EEEDFE; color: #534AB7; }
+  .pf-case-badge.teal  { background: #E1F5EE; color: #0F6E56; }
+  .pf-case-badge.coral { background: #FAECE7; color: #993C1D; }
+  .pf-case-badge.amber { background: #FAEEDA; color: #854F0B; }
+  .pf-case-body { min-width: 0; }
+  .pf-new-badge { font-size: 10px; font-weight: 500; background: #FAEEDA; color: #854F0B; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 8px; letter-spacing: .5px; }
+  .pf-case-tag { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 6px; margin-right: 4px; }
+  .pf-case-tag.blue  { color: #185FA5; background: #E6F1FB; }
+  .pf-case-tag.purple{ color: #534AB7; background: #EEEDFE; }
+  .pf-case-tag.teal  { color: #0F6E56; background: #E1F5EE; }
+  .pf-case-tag.coral { color: #993C1D; background: #FAECE7; }
+  .pf-case-tag.amber { color: #854F0B; background: #FAEEDA; }
+  .pf-case-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; color: #1a1a1a; }
+  .pf-case-desc { font-size: 13px; color: #666; line-height: 1.5; margin-bottom: 10px; }
+  .pf-checklist { list-style: none; display: flex; flex-direction: column; gap: 4px; margin: 6px 0 10px; }
+  .pf-checklist li { font-size: 12px; color: #666; display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+  .pf-checklist li i { color: #378ADD; font-size: 13px; margin-top: 1px; flex-shrink: 0; }
+  .pf-flow { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 10px; }
+  .pf-flow-step { font-size: 11px; background: #F4F6F9; color: #666; padding: 3px 10px; border-radius: 20px; display: flex; align-items: center; gap: 4px; }
+  .pf-flow-arrow { font-size: 11px; color: #aaa; align-self: center; }
+  .pf-results { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pf-result { font-size: 12px; color: #0F6E56; background: #E1F5EE; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+
+  .pf-approach { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 2rem; }
+  @media(max-width: 580px) { .pf-approach { grid-template-columns: repeat(2, 1fr); } }
+  .pf-step { background: #EEF3F9; border-radius: 10px; padding: 1rem; }
+  .pf-step-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #378ADD; opacity: .6; line-height: 1; margin-bottom: 8px; }
+  .pf-step-title { font-size: 13px; font-weight: 500; margin-bottom: 4px; color: #1a1a1a; }
+  .pf-step-desc { font-size: 12px; color: #666; line-height: 1.5; }
+
+  .pf-cta { background: #0C1A2E; border-radius: 16px; padding: 2.5rem; text-align: center; }
+  .pf-cta-title { font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin-bottom: .75rem; }
+  .pf-cta-sub { font-size: 14px; color: #B5D4F4; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 300; }
+  .pf-cta-contacts { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .pf-cta-contact { font-size: 14px; color: #85B7EB; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .pf-cta-contact:hover { color: #fff; }
+
+  hr.pf-hr { border: none; border-top: 0.5px solid #dde3ea; margin: 2rem 0; }
+  .section-wrap { margin-bottom: 2rem; }
+</style>
+</head>
+<body>
+<div class="pf-root">
+
+  <div class="pf-hero">
+    <div class="pf-tag">IT Consulting &amp; Optimization</div>
+    <div class="pf-hero-title">Мы не просто консультируем —<br><span>мы делаем так, чтобы работало</span></div>
+    <div class="pf-hero-sub">Помогаем компаниям выявить скрытые потери, выстроить надёжную ИТ-инфраструктуру и внедрить автоматизацию, которая реально снижает затраты.</div>
+    <div class="pf-stats">
+      <div><div class="pf-stat-num">12+</div><div class="pf-stat-lbl">Реализованных проектов</div></div>
+      <div><div class="pf-stat-num">30%</div><div class="pf-stat-lbl">Среднее сокращение затрат</div></div>
+      <div><div class="pf-stat-num">2×</div><div class="pf-stat-lbl">Скорость реакции на инциденты</div></div>
+    </div>
+  </div>
+
+  <div class="pf-promise">
+    <p>Мы — небольшая, но сфокусированная команда экспертов. <strong>Отсутствие бюрократии означает, что вы работаете напрямую с теми, кто решает задачи.</strong> Каждый проект начинается с честного аудита, а заканчивается измеримым результатом — не отчётом в папке.</p>
+  </div>
+
+  <div class="section-wrap">
+    <div class="pf-section-label">Что мы делаем</div>
+    <div class="pf-services">
+      <div class="pf-svc"><div class="pf-svc-icon"><i class="ti ti-radar-2"></i></div><div class="pf-svc-title">Аудит ИТ-инфраструктуры</div><div class="pf-svc-desc">Находим узкие места, избыточные расходы и риски до того, как они стали проблемой.</div></div>
+      <div class="pf-svc"><div class="pf-svc-icon"><i class="ti ti-git-branch"></i></div><div class="pf-svc-title">Аудит бизнес-процессов</div><div class="pf-svc-desc">Визуализируем и пересматриваем процессы, убираем лишние шаги и «серые зоны».</div></div>
+      <div class="pf-svc"><div class="pf-svc-icon"><i class="ti ti-activity"></i></div><div class="pf-svc-title">ИТ-мониторинг</div><div class="pf-svc-desc">Настраиваем проактивное обнаружение инцидентов — вы узнаёте о проблеме раньше пользователей.</div></div>
+      <div class="pf-svc"><div class="pf-svc-icon"><i class="ti ti-robot"></i></div><div class="pf-svc-title">AI-агенты и автоматизация</div><div class="pf-svc-desc">Внедряем AI-инструменты, которые берут на себя рутину и освобождают время команды.</div></div>
+      <div class="pf-svc"><div class="pf-svc-icon"><i class="ti ti-coins"></i></div><div class="pf-svc-title">Оптимизация затрат</div><div class="pf-svc-desc">Анализируем лицензии, облачные расходы и подрядчиков — находим, где вы платите лишнее.</div></div>
+      <div class="pf-svc"><div class="pf-svc-icon"><i class="ti ti-school"></i></div><div class="pf-svc-title">Развитие цифровых навыков</div><div class="pf-svc-desc">Закрываем разрыв между новыми решениями и готовностью людей ими пользоваться: обучение, инструкции и поддержка на рабочем месте.</div></div>
+    </div>
+  </div>
+
+  <hr class="pf-hr">
+
+  <div class="section-wrap">
+    <div class="pf-section-label">Реализованные кейсы</div>
+    <div class="pf-cases">
+
+      <div class="pf-case">
+        <div class="pf-case-badge coral"><i class="ti ti-building-skyscraper"></i></div>
+        <div class="pf-case-body">
+          <div class="pf-new-badge">Кейс · 2025</div>
+          <div><span class="pf-case-tag coral">Инфраструктура</span><span class="pf-case-tag coral">Миграция</span><span class="pf-case-tag coral">ЖКХ</span></div>
+          <div class="pf-case-title">Полный переезд ИТ-инфраструктуры при выделении компании из группы</div>
+          <div class="pf-case-desc">Управляющая компания в сфере ЖКХ выделялась из крупного холдинга. Нужна была независимая инфраструктура с нуля — без остановки операций и потери данных.</div>
+          <ul class="pf-checklist">
+            <li><i class="ti ti-check"></i>1С ЖКХ, Документооборот и ЗУП — перенос с сохранением данных и прав доступа</li>
+            <li><i class="ti ti-check"></i>Импортозамещение почты: Microsoft Exchange → VK WorkSpace on-premise, интеграция с AD</li>
+            <li><i class="ti ti-check"></i>Развернули AD, DNS, файловые серверы, Zabbix и виртуализированную среду</li>
+            <li><i class="ti ti-check"></i>Единый логин для ПК, 1С и корпоративного мессенджера</li>
+            <li><i class="ti ti-check"></i>Сеть на MikroTik: отказоустойчивая маршрутизация и бесшовный Wi-Fi на всех объектах</li>
+          </ul>
+          <div class="pf-results">
+            <span class="pf-result">Полная независимость от холдинга</span>
+            <span class="pf-result">Нулевая потеря данных</span>
+            <span class="pf-result">Единая учётная запись</span>
+            <span class="pf-result">Мониторинг с первого дня</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pf-case">
+        <div class="pf-case-badge amber"><i class="ti ti-notes"></i></div>
+        <div class="pf-case-body">
+          <div class="pf-new-badge">Кейс · 2025</div>
+          <div><span class="pf-case-tag amber">AI-агент</span><span class="pf-case-tag amber">Протоколы</span><span class="pf-case-tag amber">Агрохолдинг</span></div>
+          <div class="pf-case-title">Автоматическая генерация протоколов совещаний</div>
+          <div class="pf-case-desc">50+ встреч в неделю, ручное ведение протоколов — 2–3 часа каждая, договорённости и дедлайны терялись. Внедрили AI-агента на базе LLM: транскрибация в реальном времени, извлечение решений и задач, автогенерация протокола и создание тикетов в Task Tracker.</div>
+          <div class="pf-flow">
+            <div class="pf-flow-step"><i class="ti ti-video" style="font-size:12px"></i>Встреча</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-microphone" style="font-size:12px"></i>Транскрипция</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-brain" style="font-size:12px"></i>AI-анализ</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-file-text" style="font-size:12px"></i>Протокол</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-checkbox" style="font-size:12px"></i>Тикеты</div>
+          </div>
+          <div class="pf-results">
+            <span class="pf-result">↓ 150+ часов в месяц</span>
+            <span class="pf-result">95% точность извлечения задач</span>
+            <span class="pf-result">Автосоздание тикетов</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pf-case">
+        <div class="pf-case-badge purple"><i class="ti ti-phone-call"></i></div>
+        <div class="pf-case-body">
+          <div class="pf-new-badge">Кейс · Май 2026</div>
+          <div><span class="pf-case-tag purple">AI-агент</span><span class="pf-case-tag purple">Телефония</span><span class="pf-case-tag purple">Медицина</span></div>
+          <div class="pf-case-title">AI-анализ звонков и автопостановка задач — медицинская клиника</div>
+          <div class="pf-case-desc">Администраторы вручную прослушивали записи и ставили задачи. Внедрили AI-агента: каждые 10 минут скачивает записи, распознаёт речь (Yandex SpeechKit), анализирует (YandexGPT) и создаёт задачу в CRM. Параллельно — интеграция АТС с CRM: карточка клиента всплывает до поднятия трубки.</div>
+          <div class="pf-flow">
+            <div class="pf-flow-step"><i class="ti ti-phone-incoming" style="font-size:12px"></i>Звонок</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-microphone" style="font-size:12px"></i>Запись</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-text-recognition" style="font-size:12px"></i>Транскрипция</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-brain" style="font-size:12px"></i>AI-анализ</div>
+            <div class="pf-flow-arrow">→</div>
+            <div class="pf-flow-step"><i class="ti ti-checkbox" style="font-size:12px"></i>Задача в CRM</div>
+          </div>
+          <div class="pf-results">
+            <span class="pf-result">↓ Ручная обработка — 0</span>
+            <span class="pf-result">Ни один запрос не теряется</span>
+            <span class="pf-result">Карточка до поднятия трубки</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pf-case">
+        <div class="pf-case-badge teal"><i class="ti ti-activity"></i></div>
+        <div class="pf-case-body">
+          <div class="pf-new-badge">Кейс · 2025</div>
+          <div><span class="pf-case-tag teal">Мониторинг</span><span class="pf-case-tag teal">Инфраструктура</span><span class="pf-case-tag teal">ЖКХ</span></div>
+          <div class="pf-case-title">Проактивный ИТ-мониторинг и инфраструктура</div>
+          <div class="pf-case-desc">Выстроили систему мониторинга с нуля: сбор метрик, алертинг на аномалии, Zabbix, виртуализированная серверная среда. Инциденты выявляются до жалоб пользователей.</div>
+          <div class="pf-results">
+            <span class="pf-result">↓ Время простоя на 85%</span>
+            <span class="pf-result">Выявление инцидентов — до жалоб пользователей</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="pf-hr">
+
+  <div class="section-wrap">
+    <div class="pf-section-label">Как мы работаем</div>
+    <div class="pf-approach">
+      <div class="pf-step"><div class="pf-step-num">01</div><div class="pf-step-title">Диагностика</div><div class="pf-step-desc">Изучаем текущее состояние без прикрас — инфраструктуру, процессы, расходы.</div></div>
+      <div class="pf-step"><div class="pf-step-num">02</div><div class="pf-step-title">Гипотезы</div><div class="pf-step-desc">Формулируем конкретные точки улучшений с оценкой эффекта.</div></div>
+      <div class="pf-step"><div class="pf-step-num">03</div><div class="pf-step-title">Внедрение</div><div class="pf-step-desc">Реализуем изменения сами, без перекладывания на вашу команду.</div></div>
+      <div class="pf-step"><div class="pf-step-num">04</div><div class="pf-step-title">Измерение</div><div class="pf-step-desc">Фиксируем результат в цифрах — это ваш ROI, который можно показать.</div></div>
+    </div>
+  </div>
+
+  <div class="pf-cta">
+    <div class="pf-cta-title">Готовы найти, где вы теряете деньги?</div>
+    <div class="pf-cta-sub">Первая встреча — бесплатно. За 60 минут сформулируем гипотезы,<br>которые уже стоят вашего внимания.</div>
+    <div class="pf-cta-contacts">
+      <a href="mailto:your@email.com" class="pf-cta-contact"><i class="ti ti-mail"></i> your@email.com</a>
+      <a href="tel:+7XXXXXXXXXX" class="pf-cta-contact"><i class="ti ti-phone"></i> +7 (XXX) XXX-XX-XX</a>
+      <a href="https://t.me/yourusername" class="pf-cta-contact"><i class="ti ti-brand-telegram"></i> Telegram</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
