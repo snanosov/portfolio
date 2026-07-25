@@ -188,31 +188,31 @@
         </div>
       </div>
 
-      <div class="pf-case">
-        <div class="pf-case-badge purple"><i class="ti ti-phone-call"></i></div>
-        <div class="pf-case-body">
-          <div class="pf-new-badge">Кейс · Май 2026</div>
-          <div><span class="pf-case-tag purple">AI-агент</span><span class="pf-case-tag purple">Телефония</span><span class="pf-case-tag purple">Медицина</span></div>
-          <div class="pf-case-title">AI-анализ звонков и автопостановка задач — медицинская клиника</div>
-          <div class="pf-case-desc">Администраторы вручную прослушивали записи и ставили задачи. Внедрили AI-агента: каждые 10 минут скачивает записи, распознаёт речь (Yandex SpeechKit), анализирует (YandexGPT) и создаёт задачу в CRM. Параллельно — интеграция АТС с CRM: карточка клиента всплывает до поднятия трубки.</div>
-          <div class="pf-flow">
-            <div class="pf-flow-step"><i class="ti ti-phone-incoming" style="font-size:12px"></i>Звонок</div>
-            <div class="pf-flow-arrow">→</div>
-            <div class="pf-flow-step"><i class="ti ti-microphone" style="font-size:12px"></i>Запись</div>
-            <div class="pf-flow-arrow">→</div>
-            <div class="pf-flow-step"><i class="ti ti-text-recognition" style="font-size:12px"></i>Транскрипция</div>
-            <div class="pf-flow-arrow">→</div>
-            <div class="pf-flow-step"><i class="ti ti-brain" style="font-size:12px"></i>AI-анализ</div>
-            <div class="pf-flow-arrow">→</div>
-            <div class="pf-flow-step"><i class="ti ti-checkbox" style="font-size:12px"></i>Задача в CRM</div>
-          </div>
-          <div class="pf-results">
-            <span class="pf-result">↓ Ручная обработка — 0</span>
-            <span class="pf-result">Ни один запрос не теряется</span>
-            <span class="pf-result">Карточка до поднятия трубки</span>
-          </div>
-        </div>
-      </div>
+  <div class="pf-case">
+  <div class="pf-case-badge purple"><i class="ti ti-phone-call"></i></div>
+  <div class="pf-case-body">
+    <div class="pf-new-badge">Кейс · Май 2026</div>
+    <div><span class="pf-case-tag purple">AI-агент</span><span class="pf-case-tag purple">Телефония</span><span class="pf-case-tag purple">Медицина</span></div>
+    <div class="pf-case-title">Три AI-агента для медицинской клиники: обзвон, анализ и оценка качества</div>
+    <div class="pf-case-desc">Клиника теряла пациентов на всех этапах: администраторы забывали обзванивать перед визитом, пропущенные звонки оставались без перезвона, а руководитель работал вслепую — без объективной картины качества. Запустили экосистему из трёх AI-агентов на едином стеке. <b>Робот-обзвонщик</b> звонит пациентам за 24ч и за 2ч до визита, распознаёт «да / нет / перенос» и обновляет статус в CRM автоматически — обзвон вручную полностью убран. <b>Аналитик входящих</b> каждые 10 минут забирает записи, транскрибирует через Yandex SpeechKit, разбирает разговор через YandexGPT и создаёт задачу администратору в КлиентиксCRM. <b>Оценщик качества</b> каждый день в 18:00 присылает руководителю PDF-отчёт: воронка записи с причинами отказа (успешная запись / не замотивировал / нет времени / нет услуги / обрыв связи), продажи и допродажи по каждому администратору, инсайты дня с конкретными номерами клиентов, которых упустили. По воскресеньям в 20:00 — расширенный отчёт собственнику с 5 графиками и сравнением с прошлой неделей. Дополнительно система автоматически ставит в CRM задачи «Отработать пропущенный вызов» по каждому клиенту, до которого никто не дозвонился. Технически интересное: собственная реализация SIP-стека для Beeline Cloud PBX (без FreeSWITCH/Asterisk), обход ограничений API CRM (игнорирует фильтры, лимит 50 записей) через offset-листание и почасовой кэш, трёхуровневый фильтр робота из оценки живых сотрудников (API Beeline отдаёт две стороны одного звонка), YandexGPT Pro для аналитики с промпт-инжинирингом против самопротиворечий.</div>
+    <div class="pf-flow">
+      <div class="pf-flow-step"><i class="ti ti-phone-incoming" style="font-size:12px"></i>Звонок</div>
+      <div class="pf-flow-arrow">→</div>
+      <div class="pf-flow-step"><i class="ti ti-microphone" style="font-size:12px"></i>Запись</div>
+      <div class="pf-flow-arrow">→</div>
+      <div class="pf-flow-step"><i class="ti ti-text-recognition" style="font-size:12px"></i>Транскрипция</div>
+      <div class="pf-flow-arrow">→</div>
+      <div class="pf-flow-step"><i class="ti ti-brain" style="font-size:12px"></i>AI-анализ</div>
+      <div class="pf-flow-arrow">→</div>
+      <div class="pf-flow-step"><i class="ti ti-checkbox" style="font-size:12px"></i>Задача в CRM</div>
+    </div>
+    <div class="pf-results">
+      <span class="pf-result">↓ 100% ручного обзвона</span>
+      <span class="pf-result">370+ звонков в неделю обрабатывается автоматически</span>
+      <span class="pf-result">Собственник видит клинику в цифрах ежедневно</span>
+    </div>
+  </div>
+</div>
 
       <div class="pf-case">
         <div class="pf-case-badge teal"><i class="ti ti-activity"></i></div>
